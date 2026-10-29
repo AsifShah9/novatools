@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NovaTools — Free Online Tools</title>
+<meta name="description" content="Free online calculators, text utilities, image tools and developer tools.">
+<style>
+:root{--bg:#080b14;--panel:#101626;--line:#27334a;--text:#f4f7ff;--muted:#9ba8c0;--blue:#6d8cff;--purple:#b56cff;--green:#48e0b1}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Segoe UI,Arial,sans-serif}
+nav{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:17px 5%;background:#080b14ed;border-bottom:1px solid var(--line);backdrop-filter:blur(15px)}
+.logo{font-size:23px;font-weight:900;letter-spacing:-1px;color:white;text-decoration:none}
+.logo span,.gradient{background:linear-gradient(90deg,#86a1ff,#c18aff,#58e9ca);background-clip:text;color:transparent}
+nav a{color:var(--muted);text-decoration:none}
+.navlinks{display:flex;gap:20px;font-size:14px}
+.hero{text-align:center;padding:65px 18px 35px;background:radial-gradient(ellipse at top,#5745a526,transparent 65%)}
+.tag{display:inline-block;border:1px solid #35446b;background:#11182a;color:#c2cbff;border-radius:30px;padding:8px 13px;font-size:11px;letter-spacing:1px}
+h1{font-size:clamp(38px,7vw,68px);line-height:1.08;letter-spacing:-2px;margin:23px 0 15px}
+.hero p{max-width:620px;margin:auto;color:var(--muted);line-height:1.8}
+.search{display:flex;gap:8px;max-width:560px;margin:25px auto}
+input,textarea,select{width:100%;padding:12px;background:#0b1120;color:white;border:1px solid #303c55;border-radius:9px;margin:7px 0 13px;font:inherit}
+textarea{min-height:110px;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:1px solid var(--blue)}
+button{border:0;border-radius:9px;padding:11px 15px;background:linear-gradient(120deg,#6d8cff,#9368ff);color:white;font-weight:700;cursor:pointer}
+button:hover{filter:brightness(1.15)}
+.search input{margin:0;min-width:0}
+.stats{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+.stats b{color:white}
+main{max-width:1180px;margin:auto;padding:20px}
+.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:35px 0 20px;flex-wrap:wrap}
+h2{margin:0 0 7px;font-size:26px}
+.sectionhead p,.muted{color:var(--muted);font-size:14px;margin:0}
+.pill{border:1px solid var(--line);border-radius:20px;padding:8px 12px;font-size:12px;color:#c8d1e7}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:linear-gradient(145deg,#121a2b,#0e1422);border:1px solid var(--line);border-radius:16px;padding:20px;transition:.2s}
+.card:hover{transform:translateY(-3px);border-color:#6379ce}
+.cardtop{display:flex;justify-content:space-between;align-items:center}
+.ico{width:45px;height:45px;display:grid;place-items:center;background:#263254;border-radius:12px;font-size:22px}
+.smalltag{color:var(--green);font-size:10px;letter-spacing:1px}
+.card h3{margin:16px 0 7px;font-size:17px}
+.card p{color:var(--muted);font-size:13px;line-height:1.6;min-height:40px}
+.openbtn{background:transparent;border:1px solid #35435f;color:#dce4ff}
+.workspace{margin-top:32px;padding:24px;background:var(--panel);border:1px solid var(--line);border-radius:17px}
+.workspace h2{margin-bottom:12px}
+.panel{margin-top:17px;background:#0b1120;border:1px solid #29344c;border-radius:13px;padding:20px}
+.result{margin-top:13px;color:var(--green);font-weight:700;overflow-wrap:anywhere;white-space:pre-wrap;line-height:1.7}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.hidden{display:none!important}
+footer{border-top:1px solid var(--line);padding:28px;text-align:center;color:var(--muted);font-size:13px;margin-top:40px}
+footer b{color:white}
+@media(max-width:780px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:500px){.grid{grid-template-columns:1fr}nav{padding:14px 4%}.navlinks{gap:10px;font-size:12px}.logo{font-size:19px}main{padding:15px}.hero{padding-top:45px}.search{flex-wrap:wrap}.search button{width:100%}h1{letter-spacing:-1px}}
+</style>
+</head>
+<body>
+<nav>
+<a class="logo" href="#">Nova<span>Tools.</span></a>
+<div class="navlinks"><a href="#tools">Tools</a><a href="#workspace">Workspace</a><a href="#about">About</a></div>
+</nav>
+
+<header class="hero">
+<span class="tag">✦ YOUR EVERYDAY DIGITAL TOOLKIT</span>
+<h1>Work smarter.<br><span class="gradient">Do more, easily.</span></h1>
+<p>30 useful online tools for calculations, writing, images, developers and everyday tasks.</p>
+<div class="search">
+<input id="search" placeholder="Search any of 30 tools..." aria-label="Search tools">
+<button onclick="filterTools()">Find a tool ↗</button>
+</div>
+<div class="stats"><span>✦ <b>Free to use</b></span><span>⚡ <b>Instant results</b></span><span>🔒 <b>Browser-based tools</b></span></div>
+</header>
+
+<main>
+<section id="tools">
+<div class="sectionhead">
+<div><h2>Explore all tools</h2><p>Choose a tool to open its workspace.</p></div>
+<span class="pill" id="count">30 TOOLS</span>
+</div>
+<div class="grid" id="grid"></div>
+<p id="noResults" class="muted hidden">No matching tools found.</p>
+</section>
+
+<section class="workspace" id="workspace">
+<h2 id="workTitle">🚀 Your workspace</h2>
+<p id="workDesc" class="muted">Select any tool above to begin.</p>
+<div id="toolPanel" class="panel">
+<p class="muted">Your selected tool will appear here.</p>
+</div>
+</section>
+
+<section id="about" style="margin-top:42px">
+<div class="sectionhead"><div><h2>Made for everyday work</h2><p>Simple tools without complicated setup.</p></div></div>
+<div class="grid">
+<div class="card"><div class="ico">⚡</div><h3>Quick results</h3><p>Run calculations and text operations in your browser.</p></div>
+<div class="card"><div class="ico">🔒</div><h3>Local processing</h3><p>These tools do not require an account. Image processing happens in your browser.</p></div>
+<div class="card"><div class="ico">📱</div><h3>Responsive design</h3><p>Use NovaTools on desktop, tablet or mobile.</p></div>
+</div>
+</section>
+</main>
+<footer><b>NovaTools.</b><br>Useful tools for everyone · © <span id="year"></span></footer>
+
+<script>
+const tools = [
+["calc","🧮","Smart Calculator","MATH","Calculate two numbers with basic arithmetic."],
+["percent","％","Percentage Calculator","MATH","Calculate what percentage a number represents."],
+["discount","🏷️","Discount Calculator","MATH","Calculate a sale price and money saved."],
+["tip","🍽️","Tip Calculator","MATH","Calculate a tip and split the bill."],
+["bmi","⚖️","BMI Calculator","HEALTH","Calculate BMI using height and weight."],
+["age","🎂","Age Calculator","DATE","Calculate age from your date of birth."],
+["words","✍️","Word Counter","TEXT","Count words, characters and lines."],
+["chars","🔤","Character Counter","TEXT","Count characters with and without spaces."],
+["case","🔠","Text Case Converter","TEXT","Convert text to uppercase or lowercase."],
+["reverse","↔️","Reverse Text","TEXT","Reverse the order of your text."],
+["spaces","🧹","Remove Extra Spaces","TEXT","Clean repeated spaces from text."],
+["duplicates","📑","Remove Duplicate Lines","TEXT","Remove repeated lines from a list."],
+["slug","🔗","Text to Slug","TEXT","Create a URL-friendly text slug."],
+["resize","🖼️","Image Resizer","IMAGE","Resize an image and download the result."],
+["compress","📦","Image Compressor","IMAGE","Compress a JPEG or WebP image."],
+["convertimg","🎨","Image Format Converter","IMAGE","Convert an image to PNG or JPEG."],
+["base64img","🧬","Image to Base64","IMAGE","Convert an image to a Base64 data URL."],
+["imginfo","🔎","Image Information","IMAGE","Inspect image dimensions and file size."],
+["json","{ }","JSON Formatter","DEV","Format and validate JSON data."],
+["b64enc","🔐","Base64 Encoder","DEV","Encode text to Base64."],
+["b64dec","🔓","Base64 Decoder","DEV","Decode Base64 text."],
+["url","🌐","URL Encoder / Decoder","DEV","Encode or decode URL components."],
+["uuid","🆔","UUID Generator","DEV","Generate a random UUID."],
+["html","🧩","HTML Escape Tool","DEV","Escape or unescape HTML special characters."],
+["dateDiff","📅","Date Difference","DATE","Find the number of days between dates."],
+["units","📐","Length Converter","CONVERT","Convert kilometres, metres and miles."],
+["temp","🌡️","Temperature Converter","CONVERT","Convert Celsius, Fahrenheit and Kelvin."],
+["timestamp","⏱️","Unix Timestamp","DEV","Convert Unix timestamps and dates."],
+["stopwatch","⏲️","Stopwatch","TIME","Start, stop and reset a stopwatch."],
+["countdown","⌛","Countdown Timer","TIME","Run a countdown for a chosen duration."]
+];
+
+const $ = id => document.getElementById(id);
+$("year").textContent = new Date().getFullYear();
+
+function renderCards(list=tools){
+ $("grid").innerHTML = "";
+ list.forEach(t=>{
+  const article=document.createElement("article");
+  article.className="card";
+  article.dataset.search=(t[1]+" "+t[2]+" "+t[3]+" "+t[4]).toLowerCase();
+  const top=document.createElement("div");top.className="cardtop";
+  const icon=document.createElement("div");icon.className="ico";icon.textContent=t[1];
+  const tag=document.createElement("span");tag.className="smalltag";tag.textContent=t[3];
+  top.append(icon,tag);
+  const h=document.createElement("h3");h.textContent=t[2];
+  const p=document.createElement("p");p.textContent=t[4];
+  const b=document.createElement("button");b.className="openbtn";b.textContent="Open tool ↗";b.onclick=()=>openTool(t[0]);
+  article.append(top,h,p,b);$("grid").append(article);
+ });
+ $("count").textContent=list.length+" TOOLS";
+ $("noResults").classList.toggle("hidden",list.length!==0);
+}
+function filterTools(){
+ const q=$("search").value.trim().toLowerCase();
+ renderCards(tools.filter(t=>(t[1]+" "+t[2]+" "+t[3]+" "+t[4]).toLowerCase().includes(q)));
+}
+$("search").addEventListener("keydown",e=>{if(e.key==="Enter")filterTools()});
+
+function field(id,label,placeholder="",type="text",value=""){
+ return `<label for="${id}">${label}</label><input id="${id}" type="${type}" placeholder="${placeholder}" value="${value}">`;
+}
+function area(id,label,placeholder="Type or paste here..."){
+ return `<label for="${id}">${label}</label><textarea id="${id}" placeholder="${placeholder}"></textarea>`;
+}
+function selectField(id,label,options){
+ return `<label for="${id}">${label}</label><select id="${id}">${options.map(o=>`<option value="${o[0]}">${o[1]}</option>`).join("")}</select>`;
+}
+function button(label,fn){return `<button onclick="${fn}">${label}</button>`}
+function out(){return '<div class="result" id="result" aria-live="polite"></div>'}
+function imgUpload(){return field("file","Choose an image","","file")}
+function openTool(id){
+ const t=tools.find(x=>x[0]===id);
+ $("workTitle").textContent=t[1]+" "+t[2];
+ $("workDesc").textContent=t[4];
+ let html="";
+ switch(id){
+ case "calc":
+ html=field("a","First number","e.g. 20","number")+selectField("op","Operation",[["+","Add (+)"],["-","Subtract (−)"],["*","Multiply (×)"],["/","Divide (÷)"]])+field("b","Second number","e.g. 5","number")+button("Calculate","runTool('calc')")+out();break;
+ case "percent":
+ html=field("a","Percentage (%)","e.g. 15","number")+field("b","Number","e.g. 200","number")+button("Calculate","runTool('percent')")+out();break;
+ case "discount":
+ html=field("a","Original price","e.g. 1000","number")+field("b","Discount (%)","e.g. 20","number")+button("Calculate sale price","runTool('discount')")+out();break;
+ case "tip":
+ html=field("a","Bill amount","e.g. 1500","number")+field("b","Tip (%)","e.g. 10","number")+field("c","Number of people","e.g. 3","number","1")+button("Split bill","runTool('tip')")+out();break;
+ case "bmi":
+ html=field("a","Weight in kilograms","e.g. 60","number")+field("b","Height in centimetres","e.g. 170","number")+button("Calculate BMI","runTool('bmi')")+out()+"<p class='muted'>BMI is a rough screening measure and is not a diagnosis.</p>";break;
+ case "age":
+ html=field("a","Date of birth","","date")+button("Calculate age","runTool('age')")+out();break;
+ case "words": case "chars": case "case": case "reverse": case "spaces": case "duplicates": case "slug":
+ html=area("txt","Your text")+ (id==="case"?selectField("mode","Convert to",[["upper","UPPERCASE"],["lower","lowercase"]]):"")+
+ button(({words:"Count words",chars:"Count characters",case:"Convert text",reverse:"Reverse text",spaces:"Clean spaces",duplicates:"Remove duplicates",slug:"Create slug"})[id],"runTool('"+id+"')")+out();break;
+ case "resize": case "compress": case "convertimg": case "base64img": case "imginfo":
+ html=imgUpload()+
+ (id==="resize"?field("w","New width (pixels)","800","number")+field("h","New height (pixels)","600","number"):"")+
+ (id==="compress"?field("quality","JPEG quality (0.1–1)","0.75","number","0.75"):"")+
+ (id==="convertimg"?selectField("fmt","Output format",[["image/png","PNG"],["image/jpeg","JPEG"],["image/webp","WebP"]]):"")+
+ button(({resize:"Resize and download",compress:"Compress and download",convertimg:"Convert and download",base64img:"Create Base64 data URL",imginfo:"Get image information"})[id],"runTool('"+id+"')")+out();break;
+ case "json": html=area("txt","JSON input",'{ "hello": "world" }')+button("Format JSON","runTool('json')")+out();break;
+ case "b64enc": case "b64dec": case "url": case "html":
+ html=area("txt","Input text")+button(({b64enc:"Encode Base64",b64dec:"Decode Base64",url:"Encode URL",html:"Escape HTML"})[id],"runTool('"+id+"')")+
+ (id==="url"?button("Decode URL","runTool('urldec')"):"")+
+ (id==="html"?button("Unescape HTML","runTool('htmlun')"):"")+out();break;
+ case "uuid": html='<p class="muted">Generate a random UUID locally.</p>'+button("Generate UUID","runTool('uuid')")+out();break;
+ case "dateDiff": html=field("a","Start date","","date")+field("b","End date","","date")+button("Calculate difference","runTool('dateDiff')")+out();break;
+ case "units": html=field("a","Value","1","number")+selectField("from","Convert from",[["km","Kilometres"],["m","Metres"],["mi","Miles"]])+selectField("to","Convert to",[["m","Metres"],["km","Kilometres"],["mi","Miles"]])+button("Convert","runTool('units')")+out();break;
+ case "temp": html=field("a","Temperature value","e.g. 25","number")+selectField("from","From",[["C","Celsius"],["F","Fahrenheit"],["K","Kelvin"]])+selectField("to","To",[["F","Fahrenheit"],["C","Celsius"],["K","Kelvin"]])+button("Convert","runTool('temp')")+out();break;
+ case "timestamp": html=field("a","Unix timestamp (seconds)","e.g. 1700000000")+button("Timestamp to date","runTool('timestamp')")+button("Current timestamp","runTool('now')")+out();break;
+ case "stopwatch": html='<div id="clock" class="result">00:00.0</div><div class="actions">'+button("Start","runTool('swstart')")+button("Stop","runTool('swstop')")+button("Reset","runTool('swreset')")+'</div>'+out();break;
+ case "countdown": html=field("seconds","Duration in seconds","60","number")+button("Start countdown","runTool('cdstart')")+button("Stop","runTool('cdstop')")+'<div id="clock" class="result">Ready</div>'+out();break;
+ }
+ $("toolPanel").innerHTML=html;
+ $("workspace").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function showResult(s){const el=$("result");if(el)el.textContent=s}
+function val(id){return $(id).value}
+function num(id){return Number(val(id))}
+function fmt(n){return Number(n.toFixed(6)).toString()}
+function downloadBlob(blob,name){
+ const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+function runTool(id){
+ try{
+ switch(id){
+ case "calc":{
+ const a=val("a"),b=val("b"),op=val("op");if(a===""||b==="")return showResult("Enter both numbers.");
+ if(op==="/"&&num("b")===0)return showResult("Cannot divide by zero.");
+ const r=op==="+"?num("a")+num("b"):op==="-"?num("a")-num("b"):op==="*"?num("a")*num("b"):num("a")/num("b");
+ showResult("Result: "+fmt(r));break;}
+ case "percent":if(val("a")===""||val("b")==="")return showResult("Enter both values.");showResult(fmt(num("a")*num("b")/100));break;
+ case "discount":if(val("a")===""||val("b")==="")return showResult("Enter both values.");showResult("You save: "+fmt(num("a")*num("b")/100)+" | Sale price: "+fmt(num("a")*(1-num("b")/100)));break;
+ case "tip":if(val("a")===""||val("b")===""||val("c")===""||num("c")<=0)return showResult("Enter valid bill, tip and people values.");showResult("Tip: "+fmt(num("a")*num("b")/100)+" | Total: "+fmt(num("a")*(1+num("b")/100))+" | Per person: "+fmt(num("a")*(1+num("b")/100)/num("c")));break;
+ case "bmi":if(num("a")<=0||num("b")<=0)return showResult("Enter a valid weight and height.");showResult("BMI: "+fmt(num("a")/((num("b")/100)**2)));break;
+ case "age":{
+ if(!val("a"))return showResult("Choose your birth date.");
+ const birth=new Date(val("a")+"T00:00:00"),now=new Date();if(birth>now)return showResult("Birth date cannot be in the future.");
+ let years=now.getFullYear()-birth.getFullYear(),months=now.getMonth()-birth.getMonth(),days=now.getDate()-birth.getDate();
+ if(days<0){months--;days+=new Date(now.getFullYear(),now.getMonth(),0).getDate()}if(months<0){years--;months+=12}
+ showResult(years+" years, "+months+" months, "+days+" days");break;}
+ case "words":case "chars":{
+ const s=val("txt"),words=s.trim()?s.trim().split(/\s+/).length:0,lines=s?s.split(/\r\n|\r|\n/).length:0;
+ showResult("Words: "+words+"\nCharacters (with spaces): "+s.length+"\nCharacters (without spaces): "+s.replace(/\s/g,"").length+"\nLines: "+lines);break;}
+ case "case":showResult(val("mode")==="upper"?val("txt").toUpperCase():val("txt").toLowerCase());break;
+ case "reverse":showResult(Array.from(val("txt")).reverse().join(""));break;
+ case "spaces":showResult(val("txt").replace(/[ \t]+/g," ").replace(/^\s+|\s+$/gm,""));break;
+ case "duplicates":showResult([...new Set(val("txt").split(/\r?\n/))].join("\n"));break;
+ case "slug":showResult(val("txt").trim().toLowerCase().normalize("NFKD").replace(/[\u0300-\u036f]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,""));break;
+ case "json":showResult(JSON.stringify(JSON.parse(val("txt")),null,2));break;
+ case "b64enc":showResult(btoa(unescape(encodeURIComponent(val("txt")))));break;
+ case "b64dec":showResult(decodeURIComponent(escape(atob(val("txt").trim()))));break;
+ case "url":showResult(encodeURIComponent(val("txt")));break;
+ case "urldec":showResult(decodeURIComponent(val("txt")));break;
+ case "html":showResult(val("txt").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;").replace(/'/g,"&#39;"));break;
+ case "htmlun":{const d=document.createElement("textarea");d.innerHTML=val("txt");showResult(d.value);break;}
+ case "uuid":showResult(crypto.randomUUID?crypto.randomUUID():"UUID generation unavailable in this browser.");break;
+ case "dateDiff":{
+ if(!val("a")||!val("b"))return showResult("Choose both dates.");
+ const a=new Date(val("a")+"T00:00:00Z"),b=new Date(val("b")+"T00:00:00Z");
+ showResult(Math.round(Math.abs(b-a)/86400000)+" days between dates.");break;}
+ case "units":{
+ if(val("a")==="")return showResult("Enter a value.");
+ const f={m:1,km:1000,mi:1609.344};showResult(fmt(num("a")*f[val("from")]/f[val("to")])+" "+val("to"));break;}
+ case "temp":{
+ if(val("a")==="")return showResult("Enter a temperature.");
+ let c=val("from")==="C"?num("a"):val("from")==="F"?(num("a")-32)*5/9:num("a")-273.15;
+ let r=val("to")==="C"?c:val("to")==="F"?c*9/5+32:c+273.15;
+ if(val("to")==="K"&&r<0)return showResult("Temperature cannot be below absolute zero.");
+ showResult(fmt(r)+" °"+val("to"));break;}
+ case "timestamp":{
+ const n=Number(val("a"));if(val("a")===""||!Number.isFinite(n))return showResult("Enter a valid Unix timestamp in seconds.");
+ const d=new Date(n*1000);showResult(Number.isNaN(d.getTime())?"Invalid timestamp":d.toISOString());break;}
+ case "now":showResult("Unix timestamp: "+Math.floor(Date.now()/1000));break;
+ case "resize":case "compress":case "convertimg":case "base64img":case "imginfo":handleImage(id);break;
+ case "swstart":startStopwatch();break;
+ case "swstop":stopStopwatch();break;
+ case "swreset":resetStopwatch();break;
+ case "cdstart":startCountdown();break;
+ case "cdstop":stopCountdown();break;
+ }
+ }catch(e){showResult("Error: "+(e.message||"Please check your input."))}
+}
+let swStart=0,swElapsed=0,swTimer=null,cdTimer=null,cdRemaining=0;
+function clockText(ms){let t=Math.floor(ms/100);return String(Math.floor(t/600)).padStart(2,"0")+":"+String(Math.floor(t/10)%60).padStart(2,"0")+"."+t%10}
+function startStopwatch(){if(swTimer)return;swStart=Date.now();swTimer=setInterval(()=>{$("clock").textContent=clockText(swElapsed+Date.now()-swStart)},100)}
+function stopStopwatch(){if(swTimer){swElapsed+=Date.now()-swStart;clearInterval(swTimer);swTimer=null}}
+function resetStopwatch(){stopStopwatch();swElapsed=0;if($("clock"))$("clock").textContent="00:00.0"}
+function stopCountdown(){if(cdTimer){clearInterval(cdTimer);cdTimer=null}}
+function startCountdown(){
+ stopCountdown();if(val("seconds")===""||!Number.isFinite(num("seconds"))||num("seconds")<1||num("seconds")>86400){showResult("Enter a duration from 1 to 86400 seconds.");return}
+ cdRemaining=Math.floor(num("seconds"));const tick=()=>{if(!$("clock")){stopCountdown();return}$("clock").textContent=cdRemaining+" seconds remaining";if(cdRemaining<=0){stopCountdown();$("clock").textContent="Time is up!";return}cdRemaining--};
+ tick();cdTimer=setInterval(tick,1000);
+}
+function handleImage(id){
+ const file=$("file").files[0];if(!file)return showResult("Choose an image first.");
+ if(!file.type.startsWith("image/"))return showResult("Please choose an image file.");
+ const reader=new FileReader();
+ reader.onerror=()=>showResult("Could not read this file.");
+ if(id==="base64img"){reader.onload=()=>showResult(String(reader.result));reader.readAsDataURL(file);return}
+ if(id==="imginfo"){const im=new Image();im.onload=()=>showResult("Name: "+file.name+"\nType: "+file.type+"\nFile size: "+(file.size/1024).toFixed(2)+" KB\nDimensions: "+im.naturalWidth+" × "+im.naturalHeight+" pixels");im.onerror=()=>showResult("This image could not be opened.");im.src=URL.createObjectURL(file);return}
+ reader.onload=()=>{
+ const im=new Image();
+ im.onload=()=>{
+  let w=im.naturalWidth,h=im.naturalHeight;
+  if(id==="resize"){
+   const nw=Number(val("w")),nh=Number(val("h"));
+   if(!Number.isInteger(nw)||!Number.isInteger(nh)||nw<1||nh<1||nw>10000||nh>10000)return showResult("Enter width and height from 1 to 10000.");
+   w=nw;h=nh;
+  }
+  const canvas=document.createElement("canvas");canvas.width=w;canvas.height=h;
+  const ctx=canvas.getContext("2d");
+  const fmtType=id==="convertimg"?val("fmt"):"image/jpeg";
+  if(fmtType==="image/jpeg") {ctx.fillStyle="#ffffff";ctx.fillRect(0,0,w,h)}
+  ctx.drawImage(im,0,0,w,h);
+  const quality=id==="compress"?Math.max(.1,Math.min(1,Number(val("quality")||.75))):.9;
+  canvas.toBlob(blob=>{
+   if(!blob)return showResult("Could not process this image format.");
+   const ext=fmtType==="image/png"?"png":fmtType==="image/webp"?"webp":"jpg";
+   downloadBlob(blob,"novatools-image."+ext);
+   showResult("Done! Download started. Original size: "+(file.size/1024).toFixed(1)+" KB. New size: "+(blob.size/1024).toFixed(1)+" KB.");
+  },fmtType,quality);
+ };
+ im.onerror=()=>showResult("This image could not be opened.");
+ im.src=reader.result;
+ };
+ reader.readAsDataURL(file);
+}
+renderCards();
+</script>
+</body>
+</html>
